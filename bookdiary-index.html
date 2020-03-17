@@ -25,6 +25,72 @@
       <div class="reviews">
         
         <div class="review">
+          <div class="date"><h3>2020年3月10日</h3></div>
+          <div class="book-title"><h2>中島らも『頭の中がカユいんだ』徳間文庫</h2></div>
+          <p class="star">★★★★★</p>
+          <div class="book-review">
+            <p class="ok">　形がないから大切にしていたものを全て盗まれてしまった――などと宣いながら中島らもは妻子を残してこっそり家出する。そして大阪の街をフーテンのように彷徨うのである。<br>
+              　読んでいる最中はニヤケ笑いが止まらなかったのだけど、どう面白かったのか後から説明しようとしても言葉が出てこない。狐につままれた感じ。<br>
+              　筆者は従業員が3人だけの零細企業でコピーライターをしており、CM用に狂ったネタの数々を考えてはノートに書きつける。このネタが不思議なのだ。何かこの世の真理を表しているような、それでいて何も表していないような……。<br>
+              　『頭の中がカユいんだ』は中島らもの出した事実上最初の本であり、1986年に大阪書籍から出版されている。一度読んでみてほしい、と人におすすめできる作品だった。ちょっと気になったコピーネタの1つを引用して終わりにする。<br>
+            ”<br>
+            　本屋。訪れた客。女店員。<br><br>
+
+            「あの、すみません。『ハト麦茶殺人事件』っての、あります？」<br>
+            「はい、ございますよ。上巻、中巻、下巻とございますが……」<br>
+            「あ……。じゃ、上、中、下、全部まとめてください」<br>
+            「はい、わかりました。（チンチンチンとレジの音）五千八百円になります」<br>
+            「あ、じゃ、これ、六千円ね」<br>
+            「はい、六千円おあずかりいたします。二百円のお返しです」<br>
+            「あ、どうも……」<br>
+            「…………。お客さま？」<br>
+            「え？」<br>
+            「犯人は……ホテルのメイドですよ」<br>
+            「え⁉」<br>
+            　去っていく客。ヒューッという風の音。<br>
+            ”</p>
+          </div>
+        </div>
+        <div class="review">
+          <div class="date"><h3>2020年3月10日</h3></div>
+          <div class="book-title"><h2>三宅英明・大角祐介『新しいLinuxの教科書』SB Creative</h2></div>
+          <p class="star">★★★★☆</p>
+          <div class="book-review">
+            <p class="ok">　Linuxコマンドの初歩的な知識が(多分)網羅的に書かれた本。分かりやすいので前提知識がなくても楽しく読めた。ふと疑問に思ったことが2点あったのでメモとして書いておく。<br><br>
+            ・シェルスクリプト内でエイリアスコマンドを実行する方法<br>
+            　16章に出てくるシェルスクリプト ~/bin/rootls.sh を見ていて ls -l の部分をエイリアスコマンドにできないかなと思った。</p>
+            <div class="code-wrapper"><code>  
+                  #!/bin/bash
+
+                  echo "root directory"
+                  cd /
+                  ls -l
+                </code></div>
+            <p class="ok">　まず上の <code>ls -l</code> 部分を <code>ll</code> に書き換える。次にシェルスクリプト <code>~/.bash_aliases.sh</code> を作成する。<br>
+            <code>alias ll='ls -l'</code>
+            　ここで端末を以下のように叩くとエラーが出る。</p>
+            <div class="code-wrapper"><code>
+              $ export BASH_ENV=~/.bash_aliases
+              $ bash ~/bin/rootls.sh
+              alias ll='ls -l'
+              test.sh: line 5: ll: command not found
+            </code></div>
+            <p class="ok">　オプション <code>expand_aliases</code> をオンにしてやればいい。</p>
+            <div class="code-wrapper"><code>
+              $ export BASH_ENV=~/.bash_aliases
+              $ bash -O expand_aliases ~/bin/rootls.sh
+            </code></div>
+            <p class="ok">　1行めで環境変数 <code>BASH_ENV</code> を設定している。環境変数 BASH_ENV はbashを実行する度に呼び出されるらしい。<br>
+            　2行目ではシェルオプション <code>expand_aliases</code> を設定している。<code>-O expand_aliases</code> を削除する代わりに、スクリプト内にオプション設定を追記しておいても良い：
+            <div class="code-wrapper"><code>
+              shopt -s expand_aliases
+            </code></div>
+            
+            <p class="ok">・gitについて。mergeしたとき自動的にcommitされるのか否か<br>
+            　19章で git の使い方が解説されていたのだけど、merge で conflict が起きたらファイルを直接編集してから add して commit しましょう、と書いてあるのを読んでふと( merge したら自動的に commit されるのか？)と疑問に思ったので曖昧に調べた。どうやら勝手に commit されるような、あるいは状況によっては commit されないような……？　ちゃんと調べていないので分からない。</p>
+          </div>
+        </div>
+        <div class="review">
           <div class="date"><h3>2020年1月30日</h3></div>
           <div class="book-title"><h2>佐藤友哉『転生！ 太宰治 転生して、すみません』星海社FICTIONS</h2></div>
           <p class="star">★★☆☆☆</p>

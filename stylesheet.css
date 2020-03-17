@@ -151,3 +151,16 @@ footer {
 .book-review .ng{
   color: #333;
 }
+
+.code-wrapper{
+  margin: 15px 0;
+  background-color: #706c61;
+  float:center;
+  white-space: pre-wrap;
+}
+code{
+	text-align: left
+	background-color: #706c61;
+	color: #e1f4f3;
+	background-color: #706c61;
+}
